@@ -6,7 +6,7 @@ st.title("ChatPPT Generator")
 st.write("Generate a slide presentation using AI!")
 
 # User selects the AI model
-ai_model = st.selectbox("Select AI Model", ["openai", "ollama"])
+ai_model = st.selectbox("Select AI Model", ["openai", "ollama","groq"])
 
 # Depending on the AI model, different inputs are required
 if ai_model == "openai":
@@ -17,6 +17,10 @@ elif ai_model == "ollama":
     ollama_url = st.text_input("Enter your Ollama URL", "http://localhost:11434")
     ollama_model = st.text_input("Enter your Ollama Model", "llama3")
     api_key = None
+elif ai_model == "groq":
+    ollama_model = st.text_input("Enter your Groq Model", "llama3-70b-8192")
+    api_key = "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"
+
 
 # User inputs for the presentation
 topic = st.text_input("Enter the topic for the presentation")
